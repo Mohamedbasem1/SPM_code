@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f5f5f5;
+                background: linear-gradient(70deg, blue, pink);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+            form {
+            width: 370px; /* Adjust the width as needed */
+            }   
+    
+            .container {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+            }
+    
+            .box-column {
+                flex: 1;
+                margin: 0 10px;
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+    
+            .box-header {
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            .box-header a {
+                color: #fff;
+                text-decoration: none;
+            }
+    
+            .box {
+                padding: 20px;
+                border-bottom: 1px solid #ddd;
+            }
+    
+            .tag {
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 5px;
+                display: block;
+            }
+    
+            .tag#green {
+                color: #28a745;
+            }
+    
+            .tag#red {
+                color: #dc3545;
+            }
+    
+            .box-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 10px;
+            }
+    
+            .date {
+                display: flex;
+                align-items: center;
+            }
+    
+            .date li {
+                list-style: none;
+                margin-right: 5px;
+            }
+    
+            select {
+                padding: 5px;
+            }
+    
+            .delete {
+                color: #dc3545;
+                text-decoration: none;
+                cursor: pointer;
+            }
+    
+            iframe {
+                width: 100%;
+                border: none;
+            }
+    
+            .report-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.report-button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.report-button:hover {
+    background-color: #0056b3;
+}
+
+.form-submit {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+    background-color: #218838;
+}
+        </style>
+        <title>Tracker</title>
+    </head>
+    <body>
+        <div class="report-button">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="form-submit" type="submit">Add Project</button>
+            </form>
+        </div>
+    </body>
+</html>

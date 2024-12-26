@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css"
+    />
+
+    <title>Tracker</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://img.freepik.com/free-vector/geometric-grey-background_1055-3147.jpg?semt=ais_hybrid");
+        background-size: cover;
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .box-column {
+        flex: 1;
+        max-width: 200px;
+        margin: 10px;
+      }
+      .main {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        background-color: #f6f6f6;
+      }
+      .one {
+        width: 270px;
+        background-color: #000;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .pic1 {
+        position: relative;
+        right: 22px;
+        top: 23px;
+      }
+      .pic2 {
+        position: relative;
+        left: 25px;
+        top: 17px;
+      }
+      .pic3 {
+        position: relative;
+        right: 13px;
+        bottom: 18px;
+      }
+      .pic4 {
+        position: relative;
+        left: 14px;
+        bottom: 21px;
+      }
+      .project {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 600;
+        color: #fd4040;
+      }
+      .quote {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 400;
+        color: #fff;
+      }
+      .two {
+        width: 270px;
+        background-color: #fff;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .star {
+        font-size: 20px !important;
+        color: #b1b4b7;
+      }
+      .dot {
+        font-size: 20px !important;
+        color: #b1b4b7;
+      }
+      .round {
+        border-radius: 50%;
+        background-color: #eee;
+        width: 33px;
+        height: 33px;
+        margin-bottom: -10px;
+        align-items: center;
+        justify-content: center;
+      }
+      .name {
+        font-size: 22px;
+        color: #464e56;
+        font-weight: 600;
+        text-align: left;
+      }
+      .quote2 {
+        font-size: 12px;
+        font-weight: 500;
+        color: #868e94;
+        text-align: left;
+      }
+      .img1 {
+        position: relative;
+        left: 20px;
+        z-index: 28;
+        border: 0.5px solid #6ebde4;
+        border-radius: 50%;
+        background-color: #bcd8e6;
+      }
+      .img2 {
+        position: relative;
+        left: 10px;
+        z-index: 29;
+        border: 0.5px solid #6ebde4;
+        border-radius: 50%;
+        background-color: #bcd8e6;
+      }
+      .img3 {
+        z-index: 30;
+        border: 0.5px solid #6ebde4;
+        border-radius: 50%;
+        background-color: #bcd8e6;
+      }
+      .task {
+        color: #727475;
+      }
+      .date {
+        color: #727475;
+      }
+      .imgfix {
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        top: 2px;
+      }
+      .card {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #000000;
+        color: #ffffff;
+        font-weight: bold;
+      }
+
+      .card-content {
+        padding: 20px;
+        text-align: left;
+      }
+
+      .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #fd3640;
+      }
+
+      .card-description {
+        font-size: 14px;
+        margin-bottom: 15px;
+        color: #666;
+      }
+
+      .card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+      }
+
+      .card-meta span {
+        font-size: 12px;
+        color: #999;
+      }
+
+      .card-meta .date {
+        display: flex;
+        align-items: center;
+      }
+
+      .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        background-color: #f9f9f9;
+      }
+
+      .card-footer form select {
+        padding: 5px;
+        font-size: 14px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .delete-btn {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .delete-btn:hover {
+        background-color: #b02a37;
+      }
+      .report-button {
+          position: fixed;
+          bottom: 20px; /* Adjust the distance from the bottom */
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: #007bff;
+          color: #fff;
+          padding: 12px 24px;
+          text-decoration: none;
+          border-radius: 30px; /* Increased border radius for a more rounded button */
+          transition: background-color 0.3s ease;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added box shadow for depth */
+      }
+
+      .report-button a {
+          color: #fff; /* Set the color of the link */
+          text-decoration: none; /* Remove the underline */
+      }
+
+      .report-button:hover {
+          background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      {% for status, tasks in tasks.items %}
+      <div class="box-column">
+        <div class="card"  style="margin-left: 30px;">
+          <div class="card-header">
+            <span style="padding-left: 5px; padding-top: 5px;"><h5>{{ status | title }}: <span>{{ tasks|length }} Tasks</span></h5></span>
+            <a href="{% url 'tracker:create' project_id=project_id %}"
+              ><i class="fa-solid fa-plus" style="color: white"></i
+            ></a>
+          </div>
+        </div>
+        {% for task in tasks %}
+        <div class="pt-2">
+          <div class="two">
+            <div class="d-flex justify-content-end px-3 pt-1"><i class="mdi mdi-star-outline pr-1 star"></i><i class="mdi mdi-dots-horizontal dot"></i></div>
+            <div class="px-3"><div class="round" style="overflow: hidden; width: 100px; height: 100px;">{% if task.assign_to == "Islam" %}
+            <img src="https://i.imgur.com/f5eyirC.jpeg" width="100" height="100" class="imgfix" alt="Islam's Image">
+            {% elif task.assign_to == "Youssef Qotb" %}
+            <img src="https://i.imgur.com/mWXn7TE.png" width="100" height="100" class="imgfix" alt="Qotb's Image">
+            {% endif %}</div></div>
+            
+            <div class="px-3 pt-3">
+              <h3 class="name">{{ task.title }}</h3>
+              <p class="quote2">{{ task.description }}</p>
+            </div>
+            <div class="d-flex justify-content-start px-3 align-items-center">
+              <i class="mdi mdi-view-comfy task"></i>
+              <span class="quote2 pl-2">Assigned to: {{ task.assign_to }} {% if task.assign_to == "Islam" %}(Salary: 10000) {% elif task.assign_to == "Youssef Qotb" %} (Salary: 8000) {% elif task.assign_to == "Mohamed" %}(Salary: 7500)  {% endif %}</span>
+            </div>
+            <div
+              class="d-flex justify-content-between px-3 align-items-center pb-3"
+            >
+              <div class="d-flex justify-content-start align-items-center">
+                <i class="mdi mdi-calendar-clock date"></i>
+                <span class="quote2 pl-2">Date: {{ task.created_at }}</span>
+              </div>
+              
+            </div>
+            <div class="card-footer">
+                <form action="{% url 'tracker:change_status' project_id=project_id task_id=task.id %}" method="post">
+                    {% csrf_token %}
+                    <select name="status" onchange="this.form.submit()">
+                        {% for choice in task.STATUS_CHOICES %}
+                        <option value="{{ choice.0 }}" {% if choice.0 == task.status %}selected{% endif %}>
+                            {{ choice.1 }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </form>                
+                
+               <a class="delete-btn" href="{% url 'tracker:delete' project_id=project_id task_id=task.id %}">Delete</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+      {% endfor %}
+      <div class="report-button">
+          <a href="https://app.powerbi.com/reportEmbed?reportId=02592797-64af-4017-b8f2-1d3225d7000a&autoAuth=true&ctid=f816351e-812c-4687-b556-55e4cacc1859" onclick="window.open(this.href, '_blank'); return false;">Show the report on another page</a>
+      </div>
+    </div>
+  </body>
+</html>
